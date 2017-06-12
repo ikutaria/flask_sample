@@ -2,9 +2,5 @@
 #
 
 
-print "ls"
-
-print "sgw"
-
-print "ok"
+print "hello world"
 

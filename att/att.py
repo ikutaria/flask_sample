@@ -41,7 +41,9 @@ def show_entries():
     g.db=get_db()
     cur = g.db.execute('select title, text from entries order by id desc')
     entries = [dict(title=row[0], text=row[1]) for row in cur.fetchall()]
-    return render_template('show_entries.html', entries=entries)
+    cur = g.db.execute('select title, file_path, create_time from reports order by id desc')
+    reports = [dict(title=row[0], file_path=row[1], create_time=row[2]) for row in cur.fetchall()]
+    return render_template('show_entries.html', entries=entries, reports=reports)
 
 @app.route('/add_entry', methods=['POST'])
 def add_entry():
@@ -74,6 +76,11 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('show_entries'))
 
+@app.route('/tablesort')
+def tablesort():
+    return render_template('tablesortsample.html')
+
+
 @app.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0, type=int)
@@ -89,4 +96,5 @@ if __name__ == '__main__':
     app.config.from_pyfile(u'app.cfg',silent=True)
     print app.config.get('USERNAME')
     # print app.config.get('SECRET_KEY')
-    app.run()
+    app.run(port=60001)
+

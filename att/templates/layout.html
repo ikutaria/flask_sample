@@ -1,7 +1,10 @@
 <!doctype html>
 <title>自动化测试平台</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+<script type=text/javascript   src="{{url_for('static', filename='jquery.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='jquery-latest.js') }}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='jquery.tablesorter.js') }}"></script>
+
 <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
