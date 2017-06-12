@@ -13,6 +13,11 @@ $(function() {
 $(document).ready(function()
     {
         $("#myTable").tablesorter();
+        $("#myTestTable").tablesorter();
     }
 );
+
+
+
+
 
