@@ -86,7 +86,7 @@ def index():
 
 if __name__ == '__main__':
     # app.config.from_object(u'D:\\code\\study\\flask_sample\\att\\default.cfg')
-    app.config.from_pyfile(u'D:\\code\\python\\study\\flask_sample\\att\\app.cfg',silent=True)
+    app.config.from_pyfile(u'app.cfg',silent=True)
     print app.config.get('USERNAME')
     # print app.config.get('SECRET_KEY')
     app.run()
