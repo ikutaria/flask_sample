@@ -76,6 +76,8 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('show_entries'))
 
+
+
 @app.route('/tablesort')
 def tablesort():
     return render_template('tablesortsample.html')
